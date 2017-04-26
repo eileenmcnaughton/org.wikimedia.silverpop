@@ -1,0 +1,66 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "90d221d1186294afb9a994e8217c598a",
+    "content-hash": "c2ee5895aceb4678885dcfdf3e04747d",
+    "packages": [
+        {
+            "name": "simpleweb/silverpopphp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/simpleweb/SilverpopPHP.git",
+                "reference": "f12168cfbc568f8bffc2a56773b1c72cbdadef64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/simpleweb/SilverpopPHP/zipball/f12168cfbc568f8bffc2a56773b1c72cbdadef64",
+                "reference": "f12168cfbc568f8bffc2a56773b1c72cbdadef64",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Silverpop": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL"
+            ],
+            "authors": [
+                {
+                    "name": "David Haywood Smith",
+                    "email": "davehs@gmail.com",
+                    "homepage": "https://github.com/DHS/"
+                }
+            ],
+            "description": "Silverpop API in php",
+            "homepage": "https://github.com/simpleweb/SilverpopPHP",
+            "keywords": [
+                "Silverpop",
+                "XML-API",
+                "api",
+                "email"
+            ],
+            "time": "2016-12-06 09:34:12"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "simpleweb/silverpopphp": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

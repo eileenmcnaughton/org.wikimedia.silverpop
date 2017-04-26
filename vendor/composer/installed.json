@@ -1,0 +1,49 @@
+[
+    {
+        "name": "simpleweb/silverpopphp",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/simpleweb/SilverpopPHP.git",
+            "reference": "f12168cfbc568f8bffc2a56773b1c72cbdadef64"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/simpleweb/SilverpopPHP/zipball/f12168cfbc568f8bffc2a56773b1c72cbdadef64",
+            "reference": "f12168cfbc568f8bffc2a56773b1c72cbdadef64",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3.0"
+        },
+        "time": "2016-12-06 09:34:12",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Silverpop": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL"
+        ],
+        "authors": [
+            {
+                "name": "David Haywood Smith",
+                "email": "davehs@gmail.com",
+                "homepage": "https://github.com/DHS/"
+            }
+        ],
+        "description": "Silverpop API in php",
+        "homepage": "https://github.com/simpleweb/SilverpopPHP",
+        "keywords": [
+            "Silverpop",
+            "XML-API",
+            "api",
+            "email"
+        ]
+    }
+]

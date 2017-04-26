@@ -1,0 +1,5 @@
+{
+  "require": {
+    "simpleweb/silverpopphp": "master-dev"
+  }
+}
