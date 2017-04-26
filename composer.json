@@ -1,4 +1,10 @@
 {
+  "repositories": [
+    {
+      "type": "git",
+      "url":  "https://github.com/eileenmcnaughton/silverpopphp.git"
+    }
+  ],
   "require": {
     "simpleweb/silverpopphp": "master-dev"
   }
