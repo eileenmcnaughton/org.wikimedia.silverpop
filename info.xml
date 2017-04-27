@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <extension key="org.wikimedia.silverpop" type="module">
   <file>silverpop</file>
-  <name>FIXME</name>
+  <name>Silverpop integration</name>
   <description>FIXME</description>
   <license>AGPL-3.0</license>
   <maintainer>
