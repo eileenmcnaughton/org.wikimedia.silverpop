@@ -30,7 +30,7 @@ class EngagePod {
 
         // It would be a good thing to cache the jsessionid somewhere and reuse it across multiple requests
         // otherwise we are authenticating to the server once for every request
-        $this->_baseUrl = 'https://api' . $config['engage_server'] . '.silverpop.com/XMLAPI';
+        $this->_baseUrl = 'http://api' . $config['engage_server'] . '.silverpop.com/XMLAPI';
         $this->_login($config['username'], $config['password']);
 
     }
@@ -93,13 +93,11 @@ class EngagePod {
      * Get mailing templates
      *
      */
-    public function getMailingTemplates($isPrivate = true, $startDate, $endDate) {
+    public function getMailingTemplates($isPrivate = true) {
         $data["Envelope"] = array(
             "Body" => array(
                 "GetMailingTemplates" => array(
                     "VISIBILITY" => ($isPrivate ? '0' : '1'),
-                    "LAST_MODIFIED_START_DATE" => $startDate,
-                    "LAST_MODIFIED_END_DATE" => $endDate,
                 ),
             ),
         );
@@ -116,79 +114,6 @@ class EngagePod {
         }
     }
 
-  /**
-   * Get a specific mailing template.
-   *
-   * @param $mailingID
-   * @return mixed
-   * @throws \Exception
-   */
-  public function getMailingTemplate($mailingID) {
-    $data["Envelope"] = array(
-      "Body" => array(
-        "PreviewMailing" => array(
-          "MailingId" => $mailingID
-        ),
-      ),
-    );
-    $response = $this->_request($data);
-    return $response["Envelope"]["Body"]["RESULT"];
-  }
-
-  /**
-   * Get all the sent mails for an organization.
-   *
-   * @param string $startDate
-   *   Date string acceptable to strtotime.
-   * @param string $endDate
-   *   Date string acceptable to strtotime.
-   *
-   * @return array
-   * @throws \Exception
-   */
-  public function getSentMailingsForOrg($startDate = 'a week ago', $endDate = 'now') {
-    $data["Envelope"] = array(
-      "Body" => array(
-        'GetSentMailingsForOrg' => array(
-          'SENT' => '1',
-          "DATE_START" => date('m/d/Y H:i:s', strtotime($startDate)),
-          "DATE_END" => date('m/d/Y H:i:s', strtotime($endDate)),
-          "SHARED" => '1',
-          "EXCLUDE_ZERO_SENT" => '1',
-          "EXCLUDE_TEST_MAILINGS" => '1',
-        ),
-      )
-    );
-
-    $response = $this->_request($data);
-    return $response["Envelope"]["Body"]["RESULT"]['Mailing'];
-  }
-
-
-  /**
-   * Get all the sent mails for an organization.
-   *
-   * @param int $mailingID
-   *   Integer for mailing id.
-   * @param int $reportID
-   *   Report id.
-   *
-   * @return array
-   * @throws \Exception
-   */
-  public function getAggregateTrackingForMailing($mailingID, $reportID) {
-      $data["Envelope"] = array(
-        "Body" => array(
-          'GetAggregateTrackingForMailing' => array(
-            'MAILING_ID' => $mailingID,
-            "REPORT_ID" => $reportID,
-          ),
-        )
-      );
-
-      $response = $this->_request($data);
-      return $response["Envelope"]["Body"]["RESULT"]['Mailing'];
-  }
     /**
      * Calculate a query
      *
